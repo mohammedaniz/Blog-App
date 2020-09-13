@@ -14,8 +14,11 @@
             <p class="card-text" v-html="post.excerpt"></p>           
         </div>
         <div class="card-footer text-muted">
-                Posted on {{getTimeline(post.date)}}
-            <a href="#">{{post.author.name}}</a>
+                
+            <span class="blog-author" >Posted By <strong>{{post.author.name}}.</strong> 
+                <span class="blog-posted__date">( {{getTimeline(post.date)}} )</span>
+            </span>
+            
         </div>
     </div>
 </template>
@@ -65,5 +68,14 @@ export default {
 } */
 .tag-link:not(:last-child){
     margin-left: 5px;;
+}
+.blog-author{
+    font-size: .9rem;
+    color: black;
+    font-family: 'Roboto', 'sans-serif';
+    margin-right: 2px;
+}
+.blog-posted__date{
+    font-size: .8rem;
 }
 </style>
